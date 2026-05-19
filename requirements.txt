@@ -4,9 +4,12 @@ gradio
 PyMuPDF
 openai
 qwen_vl_utils
-transformers==4.57.6
+transformers>=5.5.0
 huggingface_hub
 modelscope
+mlx-vlm>=0.4.1
+torchvision
+markdown
 # flash-attn==2.8.0.post2  # to speed up inference need flash-attn
 accelerate
 cairosvg

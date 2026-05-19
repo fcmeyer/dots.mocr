@@ -18,6 +18,39 @@ dots.mocr
 
 
 
+## Fork Notes
+
+This fork preserves the upstream **dots.mocr** project and adds a local Apple
+Silicon command path for document parsing with MLX and oMLX backends.
+
+- **MLX**: Apple's machine-learning array framework for local Apple Silicon inference.
+- **oMLX**: a local OpenAI-compatible MLX server; this fork can submit page
+  images to it with safer default scheduling.
+- **MOCR**: multimodal OCR/document parsing for text, layout, tables, figures,
+  and structured document output.
+
+Basic local usage:
+
+```bash
+pip install -e .
+dots-mocr-mlx input.pdf --output-dir output_mlx
+```
+
+Use a local oMLX server:
+
+```bash
+dots-mocr-mlx input.pdf \
+  --backend omlx-api \
+  --api-base-url http://127.0.0.1:8000/v1 \
+  --api-model dots.mocr-bf16 \
+  --performance-preset balanced \
+  --parallel-mode server-safe \
+  --output-dir output_mlx
+```
+
+See [MLX.md](MLX.md) for backend setup, performance presets, benchmark notes,
+and generated output details.
+
 ## Introduction
 
 Designed for comprehensive parsing, **dots.mocr** seamlessly recognizes both diverse human scripts and structured graphical content. Its core capabilities encompass grounding, recognition, semantic understanding, and interactive dialogue.

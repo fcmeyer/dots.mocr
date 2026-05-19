@@ -14,4 +14,9 @@ setup(
     description='dots.mocr',
     url="https://github.com/rednote-hilab/dots.mocr",
     python_requires=">=3.10",
+    entry_points={
+        'console_scripts': [
+            'dots-mocr-mlx=dots_mocr.mlx_cli:main',
+        ],
+    },
 )
